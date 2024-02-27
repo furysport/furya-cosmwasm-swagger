@@ -1,0 +1,1003 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "REST API for FuryRoto insight",
+    "description": "Developed by Enigma",
+    "version": "1.0"
+  },
+  "paths": {
+    "/volumes/{chain}/pools/{pool_id}/current": {
+      "get": {
+        "tags": [
+          "volumes"
+        ],
+        "summary": "Return current volumes for a specific pool over the last 24h",
+        "operationId": "get_specific_pools_overview_volumes__chain__pools__pool_id__current_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Pool Id",
+              "type": "string"
+            },
+            "name": "pool_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/volumes/{chain}/total/historical/{time_range}/{granularity}": {
+      "get": {
+        "tags": [
+          "volumes"
+        ],
+        "summary": "Return Total historical volume",
+        "operationId": "get_historical_total_volume_volumes__chain__total_historical__time_range___granularity__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Time Range",
+              "type": "integer"
+            },
+            "name": "time_range",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Granularity",
+              "type": "string"
+            },
+            "name": "granularity",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/volumes/{chain}/pools/{pool_id}/current/sliding": {
+      "get": {
+        "tags": [
+          "volumes"
+        ],
+        "summary": "Return Total historical volume",
+        "operationId": "get_daily_volume_pool_sliding_volumes__chain__pools__pool_id__current_sliding_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Pool Id",
+              "type": "string"
+            },
+            "name": "pool_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/volumes/{chain}/pools/{pool_id}/historical/{time_range}/{granularity}": {
+      "get": {
+        "tags": [
+          "volumes"
+        ],
+        "summary": "Return historical volume by pool",
+        "operationId": "get_historical_by_pool_volume_volumes__chain__pools__pool_id__historical__time_range___granularity__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Pool Id",
+              "type": "string"
+            },
+            "name": "pool_id",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Time Range",
+              "type": "integer"
+            },
+            "name": "time_range",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Granularity",
+              "type": "string"
+            },
+            "name": "granularity",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/infos/{chain}/pools/{pool_id}": {
+      "get": {
+        "tags": [
+          "test"
+        ],
+        "summary": "Volume 24H Per Chai",
+        "operationId": "volume_24h_per_chai_infos__chain__pools__pool_id__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain"
+            },
+            "name": "chain",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Pool Id"
+            },
+            "name": "pool_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tvl/{chain}/pools/{pool_id}/historical/{time_range}/{granularity}": {
+      "get": {
+        "tags": [
+          "tvl"
+        ],
+        "summary": "Return historical tvl by pool",
+        "operationId": "get_historical_tvl_by_pool_volume_tvl__chain__pools__pool_id__historical__time_range___granularity__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Pool Id",
+              "type": "string"
+            },
+            "name": "pool_id",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Time Range",
+              "type": "integer"
+            },
+            "name": "time_range",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Granularity",
+              "type": "string"
+            },
+            "name": "granularity",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tvl/{chain}/total/historical/{time_range}/{granularity}": {
+      "get": {
+        "tags": [
+          "tvl"
+        ],
+        "summary": "Return total historical tvl",
+        "operationId": "get_historical_tvl_total_graphQL_tvl__chain__total_historical__time_range___granularity__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Time Range",
+              "type": "integer"
+            },
+            "name": "time_range",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Granularity",
+              "type": "string"
+            },
+            "name": "granularity",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/summary/{chain}/current": {
+      "get": {
+        "tags": [
+          "summary"
+        ],
+        "summary": "Return Total historical volume",
+        "operationId": "get_daily_summary_chain_actual_summary__chain__current_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/summary/{chain}/pools/{pool_id}/current": {
+      "get": {
+        "tags": [
+          "summary"
+        ],
+        "summary": "Return Total historical volume",
+        "operationId": "get_summary_for_pool_summary__chain__pools__pool_id__current_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Pool Id",
+              "type": "string"
+            },
+            "name": "pool_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/summary/{chain}/all/current": {
+      "get": {
+        "tags": [
+          "summary"
+        ],
+        "summary": "Return Total historical volume",
+        "operationId": "get_daily_summary_chain_actual_summary__chain__all_current_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transactions/{chain}/last/swap": {
+      "get": {
+        "tags": [
+          "transactions"
+        ],
+        "summary": "Return Total historical volume",
+        "operationId": "get_transaction_per_chain_transactions__chain__last_swap_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transactions/{chain}/pools/{pool_id}/last/swap": {
+      "get": {
+        "tags": [
+          "transactions"
+        ],
+        "summary": "Return Total historical volume",
+        "operationId": "get_transaction_per_chain_per_pool_transactions__chain__pools__pool_id__last_swap_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Pool Id",
+              "type": "string"
+            },
+            "name": "pool_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transactions/{chain}/last/liquidities": {
+      "get": {
+        "tags": [
+          "transactions"
+        ],
+        "summary": "Return Total historical volume",
+        "operationId": "get_liquidities_per_chain_transactions__chain__last_liquidities_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transactions/{chain}/pools/{pool_id}/last/liquidities": {
+      "get": {
+        "tags": [
+          "transactions"
+        ],
+        "summary": "Return Total historical volume",
+        "operationId": "get_transaction_per_chain_per_pool_transactions__chain__pools__pool_id__last_liquidities_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Pool Id",
+              "type": "string"
+            },
+            "name": "pool_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transactions/{chain}/last/all": {
+      "get": {
+        "tags": [
+          "transactions"
+        ],
+        "summary": "Return Total historical volume",
+        "operationId": "get_transaction_per_chain_transactions__chain__last_all_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transactions/{chain}/pools/{pool_id}/last/all": {
+      "get": {
+        "tags": [
+          "transactions"
+        ],
+        "summary": "Return Total historical volume",
+        "operationId": "get_transaction_per_chain_per_pool_transactions__chain__pools__pool_id__last_all_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Chain",
+              "type": "string"
+            },
+            "name": "chain",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Pool Id",
+              "type": "string"
+            },
+            "name": "pool_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pairs/furya": {
+      "get": {
+        "tags": [
+          "coingecko"
+        ],
+        "summary": "Return pair names",
+        "operationId": "get_pairs_pairs_furya_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tickers/furya": {
+      "get": {
+        "tags": [
+          "coingecko"
+        ],
+        "summary": "Market Info",
+        "operationId": "get_tickers_tickers_furya_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pairs/terra/": {
+      "get": {
+        "tags": [
+          "coingecko"
+        ],
+        "summary": "Return pair names for Terra",
+        "operationId": "get_pairs_terra_pairs_terra__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tickers/terra/": {
+      "get": {
+        "tags": [
+          "coingecko"
+        ],
+        "summary": "Market Info Terra",
+        "operationId": "get_tickers_terra_tickers_terra__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pairs/juno/": {
+      "get": {
+        "tags": [
+          "coingecko"
+        ],
+        "summary": "Return pair names for Juno",
+        "operationId": "get_pairs_juno_pairs_juno__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tickers/juno/": {
+      "get": {
+        "tags": [
+          "coingecko"
+        ],
+        "summary": "Market Info Juno",
+        "operationId": "get_tickers_juno_tickers_juno__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pairs/chihuahua/": {
+      "get": {
+        "tags": [
+          "coingecko"
+        ],
+        "summary": "Return pair names for Chihuahua",
+        "operationId": "get_pairs_chihuahua_pairs_chihuahua__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tickers/chihuahua/": {
+      "get": {
+        "tags": [
+          "coingecko"
+        ],
+        "summary": "Market Info Chihuahua",
+        "operationId": "get_tickers_chihuahua_tickers_chihuahua__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
